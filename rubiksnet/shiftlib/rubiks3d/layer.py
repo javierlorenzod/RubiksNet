@@ -64,6 +64,7 @@ class RubiksShiftBase(nn.Module):
         assert (
             num_channels % shift_groups == 0
         ), "Does not satisfy num_channels % shift_groups == 0"
+        # self.shift = nn.Parameter(torch.zeros(dim, num_channels // shift_groups, dtype=torch.float64))
         self.shift = nn.Parameter(torch.zeros(dim, num_channels // shift_groups))
         init_shift_uniform(self.shift)
         self.shift_function = shift_function

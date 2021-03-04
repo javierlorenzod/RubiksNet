@@ -27,6 +27,7 @@ class RubiksShift2D(nn.Module):
         self.padding = padding
         self.normalize_grad = normalize_grad
         self.quantize = quantize
+        #self.shift = nn.Parameter(torch.zeros(2, num_channels, dtype=torch.float64))
         self.shift = nn.Parameter(torch.zeros(2, num_channels))
         with torch.no_grad():
             if init_shift == 'uniform':
